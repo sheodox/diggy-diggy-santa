@@ -21,3 +21,5 @@ func _scored():
 	$HUD.update_score(score)
 	_spawn_present()
 
+func _on_GameTimer_timeout():
+		pass # Replace with function body.

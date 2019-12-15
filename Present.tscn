@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Present.gd" type="Script" id=1]
-[ext_resource path="res://art/present.png" type="Texture" id=2]
+[ext_resource path="res://art/snow-mound.png" type="Texture" id=2]
+[ext_resource path="res://art/present-burried.png" type="Texture" id=3]
+[ext_resource path="res://art/present-small.png" type="Texture" id=4]
+[ext_resource path="res://art/present-medium.png" type="Texture" id=5]
+[ext_resource path="res://art/present.png" type="Texture" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -9,21 +13,26 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": false,
+"name": "found",
+"speed": 15.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-height = 2.48979
+radius = 38.6435
+height = 6.23014
 
 [node name="Present" type="Area2D"]
-scale = Vector2( 3, 3 )
+position = Vector2( 77.1798, 54.0027 )
+collision_mask = 0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -5.01743, 10.8711 )
 shape = SubResource( 2 )
 [connection signal="area_entered" from="." to="." method="_on_Present_area_entered"]

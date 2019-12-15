@@ -3,6 +3,7 @@ var screen_size
 signal hit
 
 export var speed = 1000
+export var inertia_strength = 3
 
 func _ready():
 	screen_size = get_viewport_rect().size
@@ -19,16 +20,21 @@ func _process(delta):
 		velocity.x += 1
 	if Input.is_action_pressed('ui_left'):
 		velocity.x -= 1
-		
-	# if no buttons are pressed, add some negative velocity to make santa slow down
-	if velocity.length() == 0 && inertia_velocity.length() > 0:
-		inertia_velocity *= 0.01
-	else:
-		# average between velocity and inertia to make movements not quite so jerky
-		inertia_velocity += velocity
-		inertia_velocity /= 2
 	
-	position += inertia_velocity.normalized() * delta * speed
+	if inertia_velocity.length() > 0.1:
+		$AnimatedSprite.play('dig')
+	else:
+		$AnimatedSprite.play('default')
+	
+	$AnimatedSprite.flip_h = inertia_velocity.x > 0
+		
+	# average between velocity and inertia to make movements not quite so jerky
+	inertia_velocity *= inertia_strength
+	inertia_velocity += velocity
+	inertia_velocity /= inertia_strength + 1
+	velocity = inertia_velocity.normalized() if inertia_velocity.length() > 1 else inertia_velocity
+	
+	position += velocity * delta * speed
 	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	position.y = clamp(position.y, 150, screen_size.y)
 	

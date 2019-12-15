@@ -1,4 +1,4 @@
 extends CanvasLayer
 
 func update_score(score):
-	$Score.text = str(score)
+	$Panel/Score.text = str(score)
