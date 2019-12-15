@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Present.tscn" type="PackedScene" id=2]
 [ext_resource path="res://art/tree.png" type="Texture" id=3]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://art/3777-fretless-by-kevin-macleod.wav" type="AudioStream" id=6]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -13,103 +14,371 @@ Present = ExtResource( 2 )
 [node name="Background" type="Node" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="Background"]
-margin_left = 3.36035
-margin_top = -1.0
-margin_right = 1027.36
-margin_bottom = 608.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="Trees" type="Node" parent="Background"]
 editor/display_folded = true
 
 [node name="tree" type="Sprite" parent="Background/Trees"]
-position = Vector2( 130, 70 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -531.39, -41.7366 )
+
+[node name="tree31" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -531.39, -41.7366 )
+
+[node name="tree44" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -531.39, -41.7366 )
+
+[node name="tree69" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -531.39, -41.7366 )
 
 [node name="tree2" type="Sprite" parent="Background/Trees"]
-position = Vector2( 188.496, 87.6848 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -472.894, -24.0518 )
+
+[node name="tree27" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -472.894, -24.0518 )
+
+[node name="tree52" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -472.894, -24.0518 )
+
+[node name="tree58" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -472.894, -24.0518 )
 
 [node name="tree3" type="Sprite" parent="Background/Trees"]
-position = Vector2( 246.992, 65.9189 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -414.398, -45.8177 )
+
+[node name="tree34" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -414.398, -45.8177 )
+
+[node name="tree48" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -414.398, -45.8177 )
+
+[node name="tree67" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -414.398, -45.8177 )
 
 [node name="tree4" type="Sprite" parent="Background/Trees"]
-position = Vector2( 325.894, 91.7659 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -335.496, -19.9707 )
+
+[node name="tree22" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -335.496, -19.9707 )
+
+[node name="tree50" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -335.496, -19.9707 )
+
+[node name="tree63" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -335.496, -19.9707 )
 
 [node name="tree6" type="Sprite" parent="Background/Trees"]
-position = Vector2( 391.192, 65.9188 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -270.198, -45.8178 )
+
+[node name="tree26" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -270.198, -45.8178 )
+
+[node name="tree51" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -270.198, -45.8178 )
+
+[node name="tree64" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -270.198, -45.8178 )
 
 [node name="tree7" type="Sprite" parent="Background/Trees"]
-position = Vector2( 346.299, 6.06235 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -315.091, -105.674 )
+
+[node name="tree23" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -315.091, -105.674 )
+
+[node name="tree38" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -315.091, -105.674 )
+
+[node name="tree71" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -315.091, -105.674 )
 
 [node name="tree8" type="Sprite" parent="Background/Trees"]
-position = Vector2( 204.82, 4.70198 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -456.57, -107.035 )
+
+[node name="tree24" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -456.57, -107.035 )
+
+[node name="tree41" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -456.57, -107.035 )
+
+[node name="tree56" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -456.57, -107.035 )
 
 [node name="tree9" type="Sprite" parent="Background/Trees"]
-position = Vector2( 455.129, 89.0452 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -206.261, -22.6914 )
+
+[node name="tree35" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -206.261, -22.6914 )
+
+[node name="tree49" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -206.261, -22.6914 )
+
+[node name="tree62" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -206.261, -22.6914 )
 
 [node name="tree10" type="Sprite" parent="Background/Trees"]
-position = Vector2( 543.554, 76.8018 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -117.836, -34.9348 )
+
+[node name="tree33" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -117.836, -34.9348 )
+
+[node name="tree47" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -117.836, -34.9348 )
+
+[node name="tree66" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -117.836, -34.9348 )
 
 [node name="tree11" type="Sprite" parent="Background/Trees"]
-position = Vector2( 615.653, 82.2433 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -45.737, -29.4933 )
+
+[node name="tree21" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -45.737, -29.4933 )
+
+[node name="tree37" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -45.737, -29.4933 )
+
+[node name="tree61" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -45.737, -29.4933 )
 
 [node name="tree12" type="Sprite" parent="Background/Trees"]
-position = Vector2( 732.645, 68.6396 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( 71.255, -43.097 )
+
+[node name="tree20" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( 71.255, -43.097 )
+
+[node name="tree39" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 71.255, -43.097 )
+
+[node name="tree72" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 71.255, -43.097 )
 
 [node name="tree13" type="Sprite" parent="Background/Trees"]
-position = Vector2( 755.772, 86.3245 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( 94.382, -25.4121 )
+
+[node name="tree28" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( 94.382, -25.4121 )
+
+[node name="tree53" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 94.382, -25.4121 )
+
+[node name="tree59" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 94.382, -25.4121 )
 
 [node name="tree14" type="Sprite" parent="Background/Trees"]
-position = Vector2( 811.547, 74.0811 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( 150.157, -37.6555 )
+
+[node name="tree29" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( 150.157, -37.6555 )
+
+[node name="tree54" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 150.157, -37.6555 )
+
+[node name="tree60" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 150.157, -37.6555 )
 
 [node name="tree15" type="Sprite" parent="Background/Trees"]
-position = Vector2( 878.205, 31.9095 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( 216.815, -79.8271 )
+
+[node name="tree30" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( 216.815, -79.8271 )
+
+[node name="tree43" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 216.815, -79.8271 )
+
+[node name="tree68" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 216.815, -79.8271 )
 
 [node name="tree16" type="Sprite" parent="Background/Trees"]
-position = Vector2( 932.62, 86.3245 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( 271.23, -25.4121 )
+
+[node name="tree32" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( 271.23, -25.4121 )
+
+[node name="tree46" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 271.23, -25.4121 )
+
+[node name="tree65" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 271.23, -25.4121 )
 
 [node name="tree17" type="Sprite" parent="Background/Trees"]
-position = Vector2( 1003.36, 64.5585 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( 341.97, -47.1781 )
+
+[node name="tree25" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( 341.97, -47.1781 )
+
+[node name="tree40" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 341.97, -47.1781 )
+
+[node name="tree55" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 341.97, -47.1781 )
 
 [node name="tree18" type="Sprite" parent="Background/Trees"]
-position = Vector2( 1063.22, 86.3245 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( 401.83, -25.4121 )
+
+[node name="tree19" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( 401.83, -25.4121 )
+
+[node name="tree42" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 401.83, -25.4121 )
+
+[node name="tree57" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( 401.83, -25.4121 )
 
 [node name="tree5" type="Sprite" parent="Background/Trees"]
-position = Vector2( 301.407, 50.9547 )
+position = Vector2( 590, 90 )
 texture = ExtResource( 3 )
-offset = Vector2( -71.39, -21.7366 )
+offset = Vector2( -359.983, -60.7819 )
+
+[node name="tree36" type="Sprite" parent="Background/Trees"]
+position = Vector2( 1532.9, 101.05 )
+texture = ExtResource( 3 )
+offset = Vector2( -359.983, -60.7819 )
+
+[node name="tree45" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -359.983, -60.7819 )
+
+[node name="tree70" type="Sprite" parent="Background/Trees"]
+position = Vector2( 2447.57, 102.277 )
+texture = ExtResource( 3 )
+offset = Vector2( -359.983, -60.7819 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -123.794, -57.1357 )
@@ -117,10 +386,15 @@ position = Vector2( -123.794, -57.1357 )
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
 [node name="GameTimer" type="Timer" parent="."]
-autostart = true
 
 [node name="MaxPresentsTimer" type="Timer" parent="."]
 wait_time = 5.0
-autostart = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+[connection signal="start_game" from="HUD" to="." method="start_game"]
+[connection signal="video_playing" from="HUD" to="." method="_on_HUD_video_playing"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]
 [connection signal="timeout" from="MaxPresentsTimer" to="." method="_on_MaxPresentsTimer_timeout"]
+[connection signal="finished" from="Music" to="." method="_on_Music_finished"]

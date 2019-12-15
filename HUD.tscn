@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
 [ext_resource path="res://art/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://art/fmv.ogv" type="VideoStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 24
@@ -12,17 +13,44 @@ font_data = ExtResource( 2 )
 size = 24
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 48
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 1 )
 
-[node name="Panel" type="Panel" parent="."]
+[node name="GamePanel" type="Panel" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -268.5
 margin_right = 268.5
 margin_bottom = 73.0
 
-[node name="Score" type="Label" parent="Panel"]
+[node name="Score" type="Label" parent="GamePanel"]
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
@@ -36,7 +64,7 @@ text = "0"
 align = 2
 valign = 1
 
-[node name="TimeRemaining" type="Label" parent="Panel"]
+[node name="TimeRemaining" type="Label" parent="GamePanel"]
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 10.0
@@ -45,3 +73,87 @@ margin_right = 165.0
 margin_bottom = 24.5
 custom_fonts/font = SubResource( 2 )
 text = "time left"
+
+[node name="VideoPlayer" type="VideoPlayer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+stream = ExtResource( 3 )
+
+[node name="MainMenu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.29236
+margin_top = -2.58472
+margin_right = -1.29236
+margin_bottom = -2.58472
+
+[node name="Title" type="Label" parent="MainMenu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -432.0
+margin_top = -24.0
+margin_right = 432.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 3 )
+text = "Diggy Diggy Santa!"
+
+[node name="StartGameButton" type="Button" parent="MainMenu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -116.0
+margin_top = -216.0
+margin_right = 116.0
+margin_bottom = -94.0
+custom_fonts/font = SubResource( 4 )
+text = "Start!"
+
+[node name="About" type="Button" parent="MainMenu"]
+margin_right = 359.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 8 )
+text = "Credits/Licenses/Code"
+
+[node name="GameOver" type="Control" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+
+[node name="FinalScore" type="Label" parent="GameOver"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -12.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 5 )
+text = "this is the game over message"
+align = 1
+
+[node name="Ok" type="Button" parent="GameOver"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -148.708
+margin_top = 200.0
+margin_right = 151.292
+margin_bottom = 324.0
+custom_fonts/font = SubResource( 6 )
+text = "You're welcome...?"
+
+[node name="RuinedChristmases" type="Label" parent="GameOver"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 70.0
+margin_bottom = 12.0
+custom_fonts/font = SubResource( 7 )
+text = "ruined christmases"
+align = 1
+[connection signal="pressed" from="MainMenu/StartGameButton" to="." method="_on_StartGameButton_pressed"]
+[connection signal="pressed" from="MainMenu/About" to="." method="_on_About_pressed"]
+[connection signal="pressed" from="GameOver/Ok" to="." method="_on_GameOverOk_pressed"]

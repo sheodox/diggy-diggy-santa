@@ -2,11 +2,13 @@ extends Area2D
 var screen_size
 signal hit
 
-func _ready():
-	screen_size = get_viewport_rect().size
-	position = Vector2(screen_size.x / 2, screen_size.y / 2)
+var can_move = false
 
 func _process(delta):
+	if !can_move:
+		return
+	# make sure we know the proper screen size, could have changed if the window was resized and 
+	screen_size = get_viewport_rect().size
 	var pos = get_viewport().get_mouse_position()
 	var diff = position - pos
 	$AnimatedSprite.flip_h = diff.x < 0

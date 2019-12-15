@@ -15,3 +15,7 @@ func _on_Present_area_entered(area):
 	emit_signal("hit")
 	yield(get_tree().create_timer(0.5), 'timeout')
 	queue_free()
+
+# signal fired when the game starts, if presents are left over they're cleared first
+func remove():
+	queue_free()
