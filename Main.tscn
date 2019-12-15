@@ -117,6 +117,10 @@ position = Vector2( -123.794, -57.1357 )
 [node name="HUD" parent="." instance=ExtResource( 5 )]
 
 [node name="GameTimer" type="Timer" parent="."]
-wait_time = 60.0
+autostart = true
+
+[node name="MaxPresentsTimer" type="Timer" parent="."]
+wait_time = 5.0
 autostart = true
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]
+[connection signal="timeout" from="MaxPresentsTimer" to="." method="_on_MaxPresentsTimer_timeout"]

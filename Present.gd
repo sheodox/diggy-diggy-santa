@@ -9,7 +9,8 @@ func _ready():
 	position.y = rand_range(150, screen_size.y)
 
 func _on_Present_area_entered(area):
-	$CollisionShape2D.disabled = true
+	$CollisionShape2D.set_deferred('disabled', true)
+	yield(get_tree(), "physics_frame")
 	$AnimatedSprite.play('found')
 	emit_signal("hit")
 	yield(get_tree().create_timer(0.5), 'timeout')
